@@ -1,0 +1,53 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+/*.glyphicon {
+    font-size: 20px;
+}*/
+
+.navbar {
+	height: 60px;
+}
+
+.navbar-brand {
+	padding: 10px;
+}
+
+.navbar-btn {
+	margin-right: 10px;
+}
+
+.btn-default.btn-transparent {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+}
+.btn-default.btn-transparent:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: #e0e0e0;
+}
+
+.btn-danger.btn-transparent {
+  color: #d9534f;
+  background-color: transparent;
+  border-color: #d9534f;
+}
+.btn-danger.btn-transparent:hover {
+  color: #d9534f;
+  background-color: transparent;
+  border-color: #c12e2a;
+}
+
+.btn-success.btn-transparent {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+.btn-success.btn-transparent:hover {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #419641;
+}
