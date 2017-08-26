@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <form role="form" method="POST" action="{{ url_for('bank', bank_id=bank_id) }}">
+        <div class="container-full">
+            <table class="table table-striped bank-table bank-header">
+                <tbody>
+                <tr style="background-color: #181818;">
+                    <td><span class="glyphicon glyphicon-triangle-right"></span> Bank #{{ bank_id }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Name</span>
+                <input type="text" class="form-control" value="{{ bank.name if bank.name }}" maxlength="10" aria-label="name"
+                       aria-describedby="basic-addon1" name="name">
+            </div>
+            <br>
+            <div class="row bank-row">
+                <div class="col-xs-4">
+                    <label>Preset #A</label>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pa.l1 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #1"
+                               data-off="Loop #1" data-size="small" data-width="100" data-height="40" name="pa.l1">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pa.l2 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #2"
+                               data-off="Loop #2" data-size="small" data-width="100" data-height="40" name="pa.l2">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pa.l3 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #3"
+                               data-off="Loop #3" data-size="small" data-width="100" data-height="40" name="pa.l3">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pa.l4 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #4"
+                               data-off="Loop #4" data-size="small" data-width="100" data-height="40" name="pa.l4">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pa.kd }} data-toggle="toggle" data-onstyle="success" data-on="Kill dry"
+                               data-off="Kill dry" data-size="small" data-width="100" data-height="40" name="pa.kd">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label>Preset #B</label>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pb.l1 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #1"
+                               data-off="Loop #1" data-size="small" data-width="100" data-height="40" name="pb.l1">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pb.l2 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #2"
+                               data-off="Loop #2" data-size="small" data-width="100" data-height="40" name="pb.l2">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pb.l3 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #3"
+                               data-off="Loop #3" data-size="small" data-width="100" data-height="40" name="pb.l3">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pb.l4 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #4"
+                               data-off="Loop #4" data-size="small" data-width="100" data-height="40" name="pb.l4">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pb.kd }} data-toggle="toggle" data-onstyle="success" data-on="Kill dry"
+                               data-off="Kill dry" data-size="small" data-width="100" data-height="40" name="pb.kd">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label>Preset #C</label>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pc.l1 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #1"
+                               data-off="Loop #1" data-size="small" data-width="100" data-height="40" name="pc.l1">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pc.l2 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #2"
+                               data-off="Loop #2" data-size="small" data-width="100" data-height="40" name="pc.l2">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pc.l3 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #3"
+                               data-off="Loop #3" data-size="small" data-width="100" data-height="40" name="pc.l3">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pc.l4 }} data-toggle="toggle" data-onstyle="success" data-on="Loop #4"
+                               data-off="Loop #4" data-size="small" data-width="100" data-height="40" name="pc.l4">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" {{ 'checked' if bank.pc.kd }} data-toggle="toggle" data-onstyle="success" data-on="Kill dry"
+                               data-off="Kill dry" data-size="small" data-width="100" data-height="40" name="pc.kd">
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+        <div class="container">
+            <div class="row center-block">
+                <div class="col-xs-6 text-center">
+                    <a onclick="history.go(-1);" type="button" class="btn btn-default btn-transparent btn-lg" role="button">Back</a>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <button type="submit" class="btn btn-success btn-transparent btn-lg">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

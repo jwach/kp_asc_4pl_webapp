@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KP ASC-4PL Setup</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap_cyborg.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-toggle.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="KP ASC-4PL Setup" src="{{ url_for('static', filename='img/kp_logo.png') }}" width="120">
+            </a>
+            <a class="btn btn-danger btn-lg btn-transparent pull-right navbar-btn" href="#" role="button"><span
+                    class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+            <a class="btn btn-default btn-lg btn-transparent pull-right navbar-btn" href="#" role="button"><span
+                    class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+            <a class="btn btn-success btn-lg btn-transparent pull-right navbar-btn" href="/" role="button"><span
+                    class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
+        </div>
+    </div>
+</nav>
+
+<body>
+
+{% block body %}
+{% endblock %}
+
+<script src="{{ url_for('static', filename='js/jquery-slim.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-toggle.min.js') }}"></script>
+</body>
+</html>

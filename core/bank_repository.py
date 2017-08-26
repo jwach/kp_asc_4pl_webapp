@@ -1,5 +1,5 @@
 class Preset:
-    def __init__(self, l1, l2, l3, l4, kd):
+    def __init__(self, l1=False, l2=False, l3=False, l4=False, kd=False):
         self.l1 = l1
         self.l2 = l2
         self.l3 = l3
@@ -8,11 +8,11 @@ class Preset:
 
 
 class Bank:
-    def __init__(self, bank_id, p1, p2, p3):
-        self.bank_id = bank_id
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
+    def __init__(self, name, pa, pb, pc):
+        self.name = name
+        self.pa = pa
+        self.pb = pb
+        self.pc = pc
 
 
 class BankRepository:
@@ -23,12 +23,20 @@ class BankRepository:
             self.banks = banks
 
     def _get_empty_banks(self):
-        for i in range(1, 99):
-            self.banks.append(Bank(i,
-                                   Preset(False, False, False, False, False),
-                                   Preset(False, False, False, False, False),
-                                   Preset(False, False, False, False, False)))
+        banks = {}
+        for i in range(1, 100):
+            banks[i] = (Bank(None,
+                             Preset(False, False, False, False, False),
+                             Preset(False, False, False, False, False),
+                             Preset(False, False, False, False, False)))
+        banks[5] = Bank('dupa', Preset(True, False, False, True), Preset(), Preset())
+        return banks
+
+    def get_all(self):
         return self.banks
 
-    def get(self):
-        return self.banks
+    def get(self, bank_id):
+        return self.banks[bank_id]
+
+    def update(self, bank_id, bank):
+        self.banks[bank_id] = bank

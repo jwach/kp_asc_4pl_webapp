@@ -1,22 +1,25 @@
 from flask import Flask, request, render_template
+
 from core import bank_repository
 
 app = Flask(__name__)
-bank_repository = bank_repository.BankRepository()
+brepo = bank_repository.BankRepository()
 
 
-@app.route("/")
-def hello():
-    return render_template('index.html', name=bank_repository.)
+@app.route('/')
+def index():
+    global brepo
+    return render_template('index.html', banks=brepo.get_all())
 
 
-@app.route("/bank/<int:bank_id>", methods=['GET', 'POST'])
+@app.route('/bank/<int:bank_id>', methods=['GET', 'POST'])
 def bank(bank_id):
     if request.method == 'GET':
-        return str(bank_id)
+        return render_template('bank.html', bank_id=bank_id, bank=brepo.get(bank_id))
     elif request.method == 'POST':
-        return str(request.data)
+        updated_bank = bank_repository.Bank(request.form['name'])
+        return str(request.form['name'])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
