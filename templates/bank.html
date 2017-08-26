@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <form role="form" method="POST" action="{{ url_for('bank', bank_id=bank_id) }}">
+    <form role="form" id="bank_presets" method="POST" action="{{ url_for('show_bank', bank_id=bank_id) }}">
         <div class="container-full">
             <table class="table table-striped bank-table bank-header">
                 <tbody>
@@ -98,10 +98,42 @@
                     <a onclick="history.go(-1);" type="button" class="btn btn-default btn-transparent btn-lg" role="button">Back</a>
                 </div>
                 <div class="col-xs-6 text-center">
-                    <button type="submit" class="btn btn-success btn-transparent btn-lg">Save</button>
+                    <button type="submit" id="submit_button" class="btn btn-success btn-transparent btn-lg">Save</button>
                 </div>
             </div>
         </div>
     </form>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+        $(function () {
+            //hang on event of form with id=myform
+            $("#bank_presets").submit(function (e) {
+
+                //prevent Default functionality
+                e.preventDefault();
+
+                //get the action-url of the form
+                var actionurl = e.currentTarget.action;
+
+                //do your own request an handle the results
+                $.ajax({
+                    url: actionurl,
+                    type: 'post',
+                    timeout: 5000,
+                    data: $("#bank_presets").serialize(),
+                    success: function (data) {
+                        $("#submit_button").text('Saved');
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error!\nstatus: ' + textStatus + '\ntype: ' + errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
 
 {% endblock %}
