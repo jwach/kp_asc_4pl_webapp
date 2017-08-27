@@ -50,6 +50,14 @@ body {
     border-color: #419641;
 }
 
+.btn-success.btn-transparent:disabled {
+    opacity: 1.0;
+}
+
+.btn-bold {
+    font-weight: bold;
+}
+
 /*.table-striped > tbody > tr:nth-child(odd) > td,*/
 /*.table-striped > tbody > tr:nth-child(odd) > th {*/
 /*background-color: darkgray;*/
@@ -106,6 +114,27 @@ body {
     font-size: medium;
 }
 
+.bank-table-single {
+    font-size: medium;
+}
+
+.bank-table > tbody > tr {
+    line-height: 50px;
+    min-height: 50px;
+    height: 50px;
+}
+
+.bank-table > tbody > tr > td {
+    vertical-align: middle;
+}
+
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
     border-top: none;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
 }

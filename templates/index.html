@@ -6,7 +6,7 @@
         <tbody>
         {% for id, bank in banks.items() %}
             <tr onclick="window.document.location='{{ url_for('show_bank', bank_id=id) }}';">
-                <td>Bank #{{ id }}</td>
+                <td><a class="anchor" id="{{ id }}"></a>Bank #{{ id }}</td>
                 {% if bank.name %}
                     <td>{{ bank.name }}</td>
                     <td align="right"><span class="glyphicon glyphicon-triangle-right"></span></td>
