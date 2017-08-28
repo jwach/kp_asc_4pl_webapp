@@ -20,11 +20,11 @@
             <a class="navbar-brand" href="#">
                 <img alt="KP ASC-4PL Setup" src="{{ url_for('static', filename='img/kp_logo.png') }}" width="120">
             </a>
-            <a class="btn btn-danger btn-lg btn-transparent pull-right navbar-btn" href="#" role="button"><span
+            <a class="btn btn-danger btn-lg btn-transparent pull-right navbar-btn" href="{{ url_for('about') }}" role="button"><span
                     class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
-            <a class="btn btn-default btn-lg btn-transparent pull-right navbar-btn" href="#" role="button"><span
+            <a class="btn btn-default btn-lg btn-transparent pull-right navbar-btn" href="{{ url_for('settings') }}" role="button"><span
                     class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-            <a class="btn btn-success btn-lg btn-transparent pull-right navbar-btn" href="/" role="button"><span
+            <a class="btn btn-success btn-lg btn-transparent pull-right navbar-btn" href="{{ url_for('index') }}" role="button"><span
                     class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
         </div>
     </div>

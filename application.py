@@ -28,5 +28,15 @@ def update_bank(bank_id):
     bank_repository.update(bank_id, banks.Bank(request.form['name'], pa, pb, pc))
     return 'saved'
 
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
 if __name__ == '__main__':
     app.run()
