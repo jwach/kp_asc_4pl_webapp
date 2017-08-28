@@ -58,52 +58,10 @@ body {
     font-weight: bold;
 }
 
-/*.table-striped > tbody > tr:nth-child(odd) > td,*/
-/*.table-striped > tbody > tr:nth-child(odd) > th {*/
-/*background-color: darkgray;*/
-/*}*/
-
-/*.table-striped > tbody > tr:nth-child(even) > td,*/
-/*.table-striped > tbody > tr:nth-child(even) > th {*/
-/*background-color: gray;*/
-/*}*/
-
-/*.table-striped {*/
-/*border-spacing: 0px;*/
-/*}*/
-
-/*.toggle-off.btn {*/
-/*padding-left: 10px;*/
-/*padding-right: 10px;*/
-/*}*/
-
-/*.toggle-on.btn {*/
-/*padding-left: 10px;*/
-/*padding-right: 10px;*/
-/*}*/
-
-/*.toggle-off.btn {*/
-    /*text-align: left;*/
-/*}*/
-
-/*.toggle-on.btn {*/
-    /*text-align: left;*/
-/*}*/
-
 .container-full {
     margin: 0 auto;
     width: 100%;
 }
-
-/*.col {*/
-/*padding-left: 0px;*/
-/*padding-right: 0px;*/
-/*}*/
-
-/*.row {*/
-/*margin-left: 0;*/
-/*margin-right: 0;*/
-/*}*/
 
 .bank-row {
     margin-left: 0;
@@ -126,6 +84,10 @@ body {
 
 .bank-table > tbody > tr > td {
     vertical-align: middle;
+}
+
+.bank-name {
+    text-transform: uppercase;
 }
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
