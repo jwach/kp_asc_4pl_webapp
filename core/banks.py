@@ -10,8 +10,8 @@ class Preset:
 class Bank:
     def __init__(self, name, pa, pb, pc):
         if name:
-            if len(name) > 10:
-                raise Exception('Bank name cannot be longer than 10 characters')
+            if len(name) > 9:
+                raise Exception('Bank name cannot be longer than 9 characters')
             self.name = name.upper()
         self.pa = pa
         self.pb = pb
