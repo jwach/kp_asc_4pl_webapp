@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 from core import banks
 
 app = Flask(__name__)
-bank_repository = banks.BankRepository('banks.pkl')
+bank_repository = banks.BankRepository('/mnt/data/banks.pkl')
 
 
 @app.route('/')

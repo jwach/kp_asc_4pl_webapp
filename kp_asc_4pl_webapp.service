@@ -1,0 +1,16 @@
+[Unit]
+Description=KP ASC 4-PL Web App
+
+[Service]
+ExecStart=/usr/bin/python -u /root/patronus/patronus_main.py
+StandardOutput=syslog
+StandardError=syslog
+SyslogLevelPrefix=false
+SyslogLevel=debug
+SyslogIdentifier=patronus
+Restart=always
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target
+Alias=patronus.service
