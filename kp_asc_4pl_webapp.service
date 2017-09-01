@@ -1,16 +1,17 @@
 [Unit]
-Description=KP ASC 4-PL Web App
+Description=KP ASC-4PL Web App
 
 [Service]
-ExecStart=/usr/bin/python -u /root/patronus/patronus_main.py
+Environment=FLASK_APP=/root/kp_asc_4pl/kp_asc_4pl_webapp/application.py
+ExecStart=/usr/local/bin/flask run -h 0.0.0.0
 StandardOutput=syslog
 StandardError=syslog
 SyslogLevelPrefix=false
 SyslogLevel=debug
-SyslogIdentifier=patronus
+SyslogIdentifier=kp_asc_4pl_webapp
 Restart=always
-TimeoutStopSec=15
+TimeoutStopSec=5
 
 [Install]
 WantedBy=multi-user.target
-Alias=patronus.service
+Alias=kp_asc_4pl_webapp.service
