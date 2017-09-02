@@ -16,7 +16,9 @@
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Name</span>
                 <input type="text" class="form-control bank-name" value="{{ bank.name if bank.name }}" maxlength="9" aria-label="name"
-                       aria-describedby="basic-addon1" pattern="[a-zA-Z0-9!@#$%^*_|]+" name="name">
+                       aria-describedby="basic-addon1" pattern="[ a-zA-Z0-9\.'&quot;()*\.,\/\\_$-]+" name="name">
+                <span onclick="resetForm($('#bank_presets'));" class="input-group-addon glyphicon glyphicon-remove"
+                      id="basic-addon2"></span>
             </div>
             <br>
             <div class="row bank-row">
@@ -133,6 +135,11 @@
                 $("#submit_button").text('Save').removeClass('btn-bold').prop('disabled', false);
             })
         ;
+
+        function resetForm($form) {
+            $form.find('input:text').val('');
+            $form.find('input:checkbox').bootstrapToggle('off');
+        }
     </script>
 
 {% endblock %}

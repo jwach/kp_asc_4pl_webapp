@@ -3,7 +3,7 @@ Description=KP ASC-4PL Web App
 
 [Service]
 Environment=FLASK_APP=/root/kp_asc_4pl/kp_asc_4pl_webapp/application.py
-ExecStart=/usr/local/bin/flask run -h 0.0.0.0
+ExecStart=/usr/local/bin/flask run -h 0.0.0.0 --port 80
 StandardOutput=syslog
 StandardError=syslog
 SyslogLevelPrefix=false

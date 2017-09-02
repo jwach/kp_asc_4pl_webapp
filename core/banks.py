@@ -39,6 +39,10 @@ class BankRepository:
         return self.banks[bank_id]
 
     def update(self, bank_id, bank):
+        if hasattr(bank, 'name'):
+            for c in bank.name:
+                if not 32 <= ord(c) <= 95:
+                    raise Exception('Invalid character in bank name')
         self.banks[bank_id] = bank
         self._dump()
 
